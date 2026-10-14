@@ -1,0 +1,192 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="exercise1" name="Exercise 1 - Adapter Pattern">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Header -->
+        <mxCell id="header1" value="EXERCISE 1: ADAPTER PATTERN (CLASS &amp; SEQUENCE DIAGRAMS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Forme Hierarchy -->
+        <mxCell id="forme" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&amp;laquo;abstract&amp;raquo;&lt;br&gt;&lt;b&gt;Forme&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessiner(moteur: MoteurRendu): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=default;strokeWidth=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cercle" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cercle&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- x: double&lt;br&gt;- y: double&lt;br&gt;- rayon: double&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessiner(moteur: MoteurRendu): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="20" y="240" width="210" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rectangle" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Rectangle&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- x: double&lt;br&gt;- y: double&lt;br&gt;- longueur: double&lt;br&gt;- largeur: double&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessiner(moteur: MoteurRendu): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="250" y="240" width="220" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ligne" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Ligne&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- x1: double&lt;br&gt;- y1: double&lt;br&gt;- x2: double&lt;br&gt;- y2: double&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessiner(moteur: MoteurRendu): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="490" y="240" width="210" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Generalization arrows for Forme -->
+        <mxCell id="g1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="cercle" target="forme">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="rectangle" target="forme">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="ligne" target="forme">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- MoteurRendu Hierarchy (Target) -->
+        <mxCell id="moteur" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&amp;laquo;interface&amp;raquo;&lt;br&gt;&lt;b&gt;MoteurRendu&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessinerCercle(x: double, y: double, rayon: double): void&lt;br&gt;+ dessineRectangle(x: double, y: double, longueur: double, largeur: double): void&lt;br&gt;+ dessinerLigne(x1: double, y1: double, x2: double, y2: double): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="780" y="80" width="460" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Dependency from Forme to MoteurRendu -->
+        <mxCell id="dep1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#666666;" edge="1" parent="1" source="forme" target="moteur">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="125" />
+              <mxPoint x="540" y="125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_dep1" value="&amp;laquo;uses&amp;raquo;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="dep1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Concrete Renderers -->
+        <mxCell id="moteurPDF" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MoteurRenduPDF&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessinerCercle(x: double, y: double, rayon: double): void&lt;br&gt;+ dessineRectangle(x: double, y: double, longueur: double, largeur: double): void&lt;br&gt;+ dessinerLigne(x1: double, y1: double, x2: double, y2: double): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="720" y="270" width="370" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="moteurPNG" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;MoteurRenduPNG&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessinerCercle(x: double, y: double, rayon: double): void&lt;br&gt;+ dessineRectangle(x: double, y: double, longueur: double, largeur: double): void&lt;br&gt;+ dessinerLigne(x1: double, y1: double, x2: double, y2: double): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="720" y="390" width="370" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="adaptateurSVG" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AdaptateurSVG&lt;/b&gt;&lt;br&gt;&amp;laquo;Adapter&amp;raquo;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- writer: SVGWriter&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dessinerCercle(x: double, y: double, rayon: double): void&lt;br&gt;+ dessineRectangle(x: double, y: double, longueur: double, largeur: double): void&lt;br&gt;+ dessinerLigne(x1: double, y1: double, x2: double, y2: double): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="510" width="370" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Realization arrows to MoteurRendu -->
+        <mxCell id="r1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="moteurPDF" target="moteur">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="moteurPNG" target="moteur">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="440" />
+              <mxPoint x="1110" y="220" />
+              <mxPoint x="1010" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="adaptateurSVG" target="moteur">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="570" />
+              <mxPoint x="1130" y="220" />
+              <mxPoint x="1010" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Adaptee: SVGWriter -->
+        <mxCell id="svgWriter" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;SVGWriter&lt;/b&gt;&lt;br&gt;&amp;laquo;Adaptee - External Lib&amp;raquo;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ addCercle(cx: double, cy: double, r: double): void&lt;br&gt;+ addRectangle(x: double, y: double, longueur: double, largeur: double): void&lt;br&gt;+ addLigne(x1: double, y1: double, x2: double, y2: double): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="720" y="690" width="370" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Association / Composition from AdaptateurSVG to SVGWriter -->
+        <mxCell id="assocAdapteur" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=1;strokeColor=#000000;startArrow=none;" edge="1" parent="1" source="svgWriter" target="adaptateurSVG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_assoc" value="1 -writer" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="assocAdapteur">
+          <mxGeometry x="-0.3" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- SEQUENCE DIAGRAM (Question 2) -->
+        <mxCell id="seq_header" value="SEQUENCE DIAGRAM: EXPORTING RECTANGLE TO SVG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="460" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="life_main" value=":Main / Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="490" width="100" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="act_main" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="life_main">
+          <mxGeometry x="45" y="60" width="10" height="240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="life_rect" value="r: Rectangle" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="190" y="490" width="100" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="act_rect" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="life_rect">
+          <mxGeometry x="45" y="80" width="10" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="life_adapt" value="moteurSVG: AdaptateurSVG" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="340" y="490" width="150" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="act_adapt" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="life_adapt">
+          <mxGeometry x="70" y="110" width="10" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="life_writer" value="writer: SVGWriter" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="540" y="490" width="120" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="act_writer" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="life_writer">
+          <mxGeometry x="55" y="140" width="10" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Messages -->
+        <mxCell id="msg1" value="1: dessiner(moteurSVG)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="act_main" target="act_rect">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="95" y="570" as="sourcePoint" />
+            <mxPoint x="235" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg2" value="2: dessineRectangle(20, 30, 200, 100)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="act_rect" target="act_adapt">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="245" y="600" as="sourcePoint" />
+            <mxPoint x="410" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg3" value="3: addRectangle(20, 30, 200, 100)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="act_adapt" target="act_writer">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="630" as="sourcePoint" />
+            <mxPoint x="595" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg3_ret" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;" edge="1" parent="1" source="act_writer" target="act_adapt">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="595" y="730" as="sourcePoint" />
+            <mxPoint x="420" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg2_ret" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;" edge="1" parent="1" source="act_adapt" target="act_rect">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="750" as="sourcePoint" />
+            <mxPoint x="245" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg1_ret" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#000000;" edge="1" parent="1" source="act_rect" target="act_main">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235" y="770" as="sourcePoint" />
+            <mxPoint x="95" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
