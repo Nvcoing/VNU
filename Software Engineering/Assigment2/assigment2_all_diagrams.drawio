@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="exercise1" name="Exercise 1 - Singleton Pattern">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="EXERCISE 1: SINGLETON DESIGN PATTERN (JOURNALISATION)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_compte" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CompteBancaire&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- numero: int&lt;br&gt;- solde: double&lt;br&gt;- journalisation: Journalisation&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CompteBancaire(numero: int)&lt;br&gt;+ deposerArgent(depot: double): void&lt;br&gt;+ retirerArgent(retrait: double): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="80" y="90" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c_journalisation" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&amp;laquo;singleton&amp;raquo;&lt;br&gt;&lt;b&gt;Journalisation&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;- uniqueInstance: Journalisation = null&lt;/u&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- Journalisation()&lt;br&gt;&lt;u&gt;+ getInstance(): Journalisation&lt;/u&gt;&lt;br&gt;+ afficherLog(log: string): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="540" y="80" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="self_link" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#276A3C;strokeWidth=1.5;" edge="1" parent="1" source="c_journalisation" target="c_journalisation">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="110" />
+              <mxPoint x="920" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_self" value="-uniqueInstance" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="self_link">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#000000;strokeWidth=1.5;" edge="1" parent="1" source="c_compte" target="c_journalisation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_assoc1" value="1 -journalisation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="assoc1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" value="Note: getInstance() checks:&lt;br&gt;if (uniqueInstance == null)&lt;br&gt;&amp;nbsp;&amp;nbsp;uniqueInstance = new Journalisation();&lt;br&gt;return uniqueInstance;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="580" y="290" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="link_note" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=none;strokeColor=#B58B00;" edge="1" parent="1" source="c_journalisation" target="note1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="exercise2" name="Exercise 2 - Decorator Pattern">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="header2" value="EXERCISE 2: DECORATOR DESIGN PATTERN (CLASS, OBJECT &amp; SEQUENCE DIAGRAMS)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sec1" value="1. CLASS DIAGRAM (Decorator Pattern - Question 2)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#0F766E;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_logger" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&amp;laquo;interface&amp;raquo;&lt;br&gt;&lt;b&gt;Logger&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ log(msg: string): void {abstract}&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="320" y="110" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_console" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ConsoleLogger&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ log(msg: string): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="60" y="240" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_file" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FileLogger&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nomFichier_: string&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ FileLogger(nomFichier: string)&lt;br&gt;+ log(msg: string): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="240" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_decorateur" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&amp;laquo;abstract&amp;raquo;&lt;br&gt;&lt;b&gt;DecorateurLogger&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# logger_: Logger&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ DecorateurLogger(logger: Logger)&lt;br&gt;+ log(msg: string): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="580" y="240" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="c_console" target="c_logger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="c_file" target="c_logger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="c_decorateur" target="c_logger">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="710" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;startArrow=diamondThin;startFill=1;strokeColor=#D79B00;strokeWidth=1.5;" edge="1" parent="1" source="c_decorateur" target="c_logger">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="285" />
+              <mxPoint x="870" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_comp" value="1 -logger_" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="comp_dec">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_html" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;HTMLLogger&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ HTMLLogger(logger: Logger)&lt;br&gt;+ log(msg: string): void&lt;br&gt;+ formaterHTML(msg: string): string&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="460" y="380" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_encrypt" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;EncryptLogger&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- shift: int = 4&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ EncryptLogger(logger: Logger, shift: int)&lt;br&gt;+ log(msg: string): void&lt;br&gt;+ crypter(msg: string): string&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="720" y="380" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="c_html" target="c_decorateur">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="c_encrypt" target="c_decorateur">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sec2" value="2. OBJECT DIAGRAM (Question 3: HTMLLogger wrapping FileLogger)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#0F766E;" vertex="1" parent="1">
+          <mxGeometry x="50" y="520" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o_hlogger" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;u&gt;&lt;b&gt;hLogger : HTMLLogger&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;logger_&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="80" y="570" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="o_flogger" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;u&gt;&lt;b&gt;fLogger : FileLogger&lt;/b&gt;&lt;/u&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;nomFichier_ = &quot;FichierLog1.html&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="360" y="570" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="olink1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.5;" edge="1" parent="1" source="o_hlogger" target="o_flogger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_olink1" value="wraps / references" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="olink1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sec3" value="3. SEQUENCE DIAGRAM (Question 4: Storing Log in File in HTML format)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#0F766E;" vertex="1" parent="1">
+          <mxGeometry x="50" y="670" width="550" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="seq_main" value=":Main / Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="110" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="act_seq_main" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="seq_main">
+          <mxGeometry x="50" y="50" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="seq_html" value="hLogger : HTMLLogger" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="320" y="720" width="160" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="act_seq_html" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="seq_html">
+          <mxGeometry x="75" y="70" width="10" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="seq_file" value="fLogger : FileLogger" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="600" y="720" width="150" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="act_seq_file" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="seq_file">
+          <mxGeometry x="70" y="110" width="10" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="1: log(&quot;Message d'erreur n°1&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="act_seq_main" target="act_seq_html">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="790" as="sourcePoint" />
+            <mxPoint x="390" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2_self" value="formaterHTML(msg)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#D79B00;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="act_seq_html" target="act_seq_html">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="810" />
+              <mxPoint x="430" y="830" />
+            </Array>
+            <mxPoint x="405" y="810" as="sourcePoint" />
+            <mxPoint x="405" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="2: log(&quot;&lt;HTML&gt;&lt;BODY&gt; &lt;b&gt; Message d'erreur n°1 &lt;/b&gt; &lt;/BODY&gt; &lt;/HTML&gt;&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#000000;" edge="1" parent="1" source="act_seq_html" target="act_seq_file">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="850" as="sourcePoint" />
+            <mxPoint x="670" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3_ret" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#4B5563;" edge="1" parent="1" source="act_seq_file" target="act_seq_html">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="670" y="890" as="sourcePoint" />
+            <mxPoint x="405" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1_ret" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;strokeColor=#4B5563;" edge="1" parent="1" source="act_seq_html" target="act_seq_main">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="910" as="sourcePoint" />
+            <mxPoint x="140" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

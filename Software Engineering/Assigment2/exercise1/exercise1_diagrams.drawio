@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="exercise1" name="Exercise 1 - Singleton Pattern">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="EXERCISE 1: SINGLETON DESIGN PATTERN (JOURNALISATION)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- CompteBancaire Class -->
+        <mxCell id="c_compte" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CompteBancaire&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- numero: int&lt;br&gt;- solde: double&lt;br&gt;- journalisation: Journalisation&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CompteBancaire(numero: int)&lt;br&gt;+ deposerArgent(depot: double): void&lt;br&gt;+ retirerArgent(retrait: double): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="80" y="90" width="280" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- Journalisation Singleton Class -->
+        <mxCell id="c_journalisation" value="&lt;p style=&quot;margin:0px;padding-top:4px;text-align:center;&quot;&gt;&amp;laquo;singleton&amp;raquo;&lt;br&gt;&lt;b&gt;Journalisation&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;u&gt;- uniqueInstance: Journalisation = null&lt;/u&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- Journalisation()&lt;br&gt;&lt;u&gt;+ getInstance(): Journalisation&lt;/u&gt;&lt;br&gt;+ afficherLog(log: string): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=11;fontFamily=Helvetica;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="540" y="80" width="320" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Self-reference for Singleton -->
+        <mxCell id="self_link" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#276A3C;strokeWidth=1.5;" edge="1" parent="1" source="c_journalisation" target="c_journalisation">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="110" />
+              <mxPoint x="920" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_self" value="-uniqueInstance" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="self_link">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Association CompteBancaire -> Journalisation -->
+        <mxCell id="assoc1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#000000;strokeWidth=1.5;" edge="1" parent="1" source="c_compte" target="c_journalisation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_assoc1" value="1 -journalisation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="assoc1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Note on Singleton getInstance() -->
+        <mxCell id="note1" value="Note: getInstance() checks:&lt;br&gt;if (uniqueInstance == null)&lt;br&gt;&amp;nbsp;&amp;nbsp;uniqueInstance = new Journalisation();&lt;br&gt;return uniqueInstance;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="580" y="290" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="link_note" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=none;strokeColor=#B58B00;" edge="1" parent="1" source="c_journalisation" target="note1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
